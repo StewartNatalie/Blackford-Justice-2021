@@ -1,0 +1,140 @@
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".left-side", {
+    ScrollTrigger: {
+        trigger:".left-side",
+        start:"top right",
+        end: "top 100px",
+        scrub: true,
+        pin: true,
+        markers:true
+    },
+    x:485,
+    rotation:0,
+    ease:"",
+    duration:3
+});
+
+gsap.to(".nav-links", {
+    ScrollTrigger: {
+        trigger:".nav-links",
+        start:"top left",
+        end: "top 100px",
+        scrub: true,
+        pin: true,
+        markers:true
+    },
+    x:35,
+    rotation:0,
+    ease:"",
+    duration:3
+});
+
+gsap.to(".nav-box", {
+    ScrollTrigger: {
+        trigger:".nav-box",
+        start:"top center",
+        end: "bottom 100px",
+        scrub: true,
+        pin: true,
+        markers:true
+    },
+    x:0,
+    y:150,
+    rotation:0,
+    ease:"bounce",
+    duration:10
+});
+
+gsap.to(".nav-box-1", {
+    ScrollTrigger: {
+        trigger:".nav-box",
+        start:"top center",
+        end: "bottom 100px",
+        scrub: true,
+        pin: true,
+        markers:true
+    },
+    x:0,
+    y:150,
+    rotation:0,
+    ease:"bounce",
+    duration:12
+});
+
+let tl = gsap.timeline({
+    ScrollTrigger: {
+    trigger: ".nav-box-1",
+    start: "top 50px",
+    endTrigger: ".nav-box-3",
+    end: "bottom 100px",
+    scrub: true,
+    pin: true,
+    markers: true
+},
+});
+
+tl.to(".nav-box-2", {
+    
+    x:0,
+    y:200,
+    rotation: 0,
+    ease: "bounce",
+    duration: 15
+})
+
+.to(".nav-box-2",{
+    duration:1
+})
+
+.to(".nav-box-2", {
+    x: 0,
+    duration: 3
+});
+
+
+gsap.to(".nav-box-3", {
+    ScrollTrigger: {
+        trigger:".nav-box-2",
+        start:"top center",
+        end: "bottom 100px",
+        scrub: true,
+        pin: true,
+        markers:true
+    },
+    x:0,
+    y:100,
+    rotation: 0,
+    ease:"bounce",
+    duration:2
+});
+
+
+gsap.to(".nav-box-4", {
+    ScrollTrigger: {
+        trigger:".nav-box-2",
+        start:"top center",
+        end: "bottom 100px",
+        scrub: true,
+        pin: true,
+        markers:true
+    },
+    x:0,
+    y:-50,
+    rotation:360,
+    ease:"bounce",
+    duration:3
+});
+
+ScrollTrigger.create({
+    Animation: tl,
+    trigger: "#nav-box-2",
+    start:"top top",
+    end: "+=4000",
+    scrub: true,
+    pin: true,
+    anticipatePin: 1
+
+});
+
+
